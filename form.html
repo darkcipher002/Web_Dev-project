@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strathmore Campus Event Registration</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Strathmore Event Hub</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="form.html" class="active">Event Registration</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h2>Campus Event & Club Registration</h2>
+            <p>Register for upcoming campus events using your student credentials.</p>
+
+            <!-- Dynamic ARIA Live Status Banner -->
+            <div id="status-message" aria-live="polite" class="status-box"></div>
+
+            <form id="registration-form" action="process.php" method="POST" novalidate>
+                
+                <!-- Field 1: Text -->
+                <div class="form-group">
+                    <label for="full_name">Full Name *</label>
+                    <input type="text" id="full_name" name="full_name" required placeholder="e.g. Jane Wanjiku">
+                    <span class="field-error" id="error-full_name"></span>
+                </div>
+
+                <!-- Field 2: Text (ID Format) -->
+                <div class="form-group">
+                    <label for="admission_number">Admission Number *</label>
+                    <input type="text" id="admission_number" name="admission_number" required placeholder="e.g. 145689 or DBIT/12345/24">
+                    <span class="field-error" id="error-admission_number"></span>
+                </div>
+
+                <!-- Field 3: Email -->
+                <div class="form-group">
+                    <label for="email">Strathmore Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="username@strathmore.edu">
+                    <span class="field-error" id="error-email"></span>
+                </div>
+
+                <!-- Field 4: Select Dropdown -->
+                <div class="form-group">
+                    <label for="faculty">Faculty / School *</label>
+                    <select id="faculty" name="faculty" required>
+                        <option value="">-- Select Your Faculty --</option>
+                        <option value="SCES">School of Computing and Engineering Sciences (SCES)</option>
+                        <option value="SBS">Strathmore Business School (SBS)</option>
+                        <option value="SLS">Strathmore Law School (SLS)</option>
+                        <option value="SIMS">Institute of Mathematical Sciences (SIMS)</option>
+                    </select>
+                    <span class="field-error" id="error-faculty"></span>
+                </div>
+
+                <!-- Field 5: Radio Choice -->
+                <fieldset class="form-group fieldset-reset">
+                    <legend>Select Campus Event *</legend>
+                    <label class="radio-label">
+                        <input type="radio" name="event_name" value="Strathmore Tech Club Summit" checked> 
+                        Strathmore Tech Club Summit (Max 1 Guest Pass)
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="event_name" value="SU Cultural Night"> 
+                        SU Cultural Night
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="event_name" value="Sports Gala 2026"> 
+                        Inter-Faculty Sports Gala
+                    </label>
+                    <span class="field-error" id="error-event_name"></span>
+                </fieldset>
+
+                <!-- Field 6: Number -->
+                <div class="form-group">
+                    <label for="guest_passes">Guest Passes Required (1-3) *</label>
+                    <input type="number" id="guest_passes" name="guest_passes" min="1" max="3" value="1" required>
+                    <span class="field-error" id="error-guest_passes"></span>
+                </div>
+
+                <!-- Field 7: Textarea with Counter -->
+                <div class="form-group">
+                    <label for="special_needs">Dietary / Accessibility Requirements</label>
+                    <textarea id="special_needs" name="special_needs" maxlength="150" rows="3" placeholder="Specify any dietary restrictions or accommodations needed..."></textarea>
+                    <small class="counter-text"><span id="char-counter">150</span> characters remaining</small>
+                </div>
+
+                <!-- Live Ticket Preview Card -->
+                <div id="live-preview" class="preview-card">
+                    <h3>Strathmore Event Pass Preview</h3>
+                    <p><strong>Student:</strong> <span id="prev-name">---</span></p>
+                    <p><strong>Admission No:</strong> <span id="prev-adm">---</span></p>
+                    <p><strong>Selected Event:</strong> <span id="prev-event">Strathmore Tech Club Summit</span></p>
+                    <p><strong>Total Passes:</strong> <span id="prev-passes">1</span></p>
+                </div>
+
+                <button type="submit" id="submit-btn">Submit Registration</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Strathmore University — Web Application Development Project.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
