@@ -1,0 +1,244 @@
+:root {
+    --su-navy: #002147;
+    --su-gold: #D4AF37;
+    --su-light-bg: #f4f6f9;
+    --su-card: #ffffff;
+    --error-red: #d9534f;
+    --text-dark: #2c3e50;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--su-light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--su-navy);
+    color: white;
+    padding: 1rem 0;
+    border-bottom: 4px solid var(--su-gold);
+}
+
+.header-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a.active, nav a:hover, nav a:focus {
+    color: var(--su-gold);
+    outline: none;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.form-container {
+    background: var(--su-card);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 33, 71, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.fieldset-reset {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+legend {
+    font-weight: bold;
+    color: var(--su-navy);
+}
+
+.radio-label {
+    display: block;
+    margin-top: 0.5rem;
+    font-weight: normal;
+}
+
+label {
+    font-weight: 600;
+    color: var(--su-navy);
+    margin-bottom: 0.3rem;
+}
+
+input, select, textarea {
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--su-navy);
+    outline: 2px solid var(--su-gold);
+}
+
+.field-error {
+    color: var(--error-red);
+    font-size: 0.85rem;
+    margin-top: 0.2rem;
+}
+
+.counter-text {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.2rem;
+}
+
+.preview-card {
+    background-color: #eef2f7;
+    border-left: 5px solid var(--su-navy);
+    padding: 1rem;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+}
+
+.preview-card h3 {
+    margin-top: 0;
+    color: var(--su-navy);
+}
+
+button {
+    background-color: var(--su-navy);
+    color: var(--su-gold);
+    padding: 0.9rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s ease;
+}
+
+button:hover, button:focus {
+    background-color: #001733;
+}
+
+.status-box {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    display: none;
+}
+
+.status-box.active-error {
+    display: block;
+    background-color: #f8d7da;
+    color: var(--error-red);
+    border: 1px solid #f5c6cb;
+}
+
+/* Home / Landing Page Styles */
+.hero-section {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    background: var(--su-card);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 33, 71, 0.08);
+}
+
+.hero-section h2 {
+    color: var(--su-navy);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: var(--su-navy);
+    color: var(--su-gold);
+    padding: 0.8rem 1.6rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.event-card {
+    background: var(--su-card);
+    padding: 1.2rem;
+    border-radius: 6px;
+    border-top: 4px solid var(--su-gold);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.event-card h3 {
+    margin-top: 0;
+    color: var(--su-navy);
+}
+
+.event-faculty {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #666;
+}
+
+.guidelines-section {
+    background: var(--su-card);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    background: var(--su-navy);
+    color: white;
+}
+
+/* Responsive Media Query */
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav ul {
+        margin-top: 0.5rem;
+    }
+    .form-container {
+        padding: 1.2rem;
+    }
+}
